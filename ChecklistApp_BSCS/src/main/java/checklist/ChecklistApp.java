@@ -25,15 +25,15 @@ public class ChecklistApp {
     }
 
     private static String resolveDataDir() {
-        String[] possiblePaths = {
+        String[] paths = {
                 "data",
-                "ChecklistApp/data",
-                "src/main/java/checklist/data"
+                "ChecklistApp_BSCS/data",
+                "ChecklistApp/data"
         };
 
-        for (String path : possiblePaths) {
+        for (String path : paths) {
             File folder = new File(path);
-            if (folder.isDirectory()) {
+            if (folder.exists() && folder.isDirectory()) {
                 return folder.getPath() + File.separator;
             }
         }
@@ -46,8 +46,7 @@ public class ChecklistApp {
             courses = recordManager.load();
             System.out.println("  [INFO] Student record loaded from: " + RECORD_FILE);
         } else {
-            CurriculumLoader loader = new CurriculumLoader(CURRICULUM_FILE);
-            courses = loader.load();
+            courses = new CurriculumLoader(CURRICULUM_FILE).load();
             System.out.println("  [INFO] Curriculum loaded from: " + CURRICULUM_FILE);
             System.out.println("  [INFO] No saved record found. Starting fresh.");
         }
@@ -128,7 +127,7 @@ public class ChecklistApp {
             System.err.println("[ERROR] Failed to load data: " + e.getMessage());
             System.err.println("  Looked for: " + CURRICULUM_FILE);
             System.err.println("  Working directory: " + new File(".").getAbsolutePath());
-            System.err.println("  Please ensure bscs_curriculum.txt is inside a data folder.");
+            System.err.println("  Please ensure bscs_curriculum.txt is inside the data folder.");
             System.exit(1);
         }
 
