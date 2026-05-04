@@ -29,8 +29,6 @@ public class EnterGrades {
         }
     }
 
-    // -------------------------------------------------------------------------
-
     private void curriculum() {
         List<Course> list = courses.stream()
                 .filter(c -> !c.isTaken() && !isExtra(c))
@@ -106,8 +104,6 @@ public class EnterGrades {
         System.out.println("\n  Extra course added.");
         InputUtil.pressEnterToContinue();
     }
-
-    // -------------------------------------------------------------------------
 
     private void saveGrade(Course c) {
         String grade = InputUtil.readGrade(c.getDisplayCourseNo());

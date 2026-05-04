@@ -54,8 +54,6 @@ public class ShowProgressSummary {
         InputUtil.pressEnterToContinue();
     }
 
-    // -------------------------------------------------------------------------
-
     private boolean isExtra(Course c) {
         return c.getTerm().equalsIgnoreCase("Extra");
     }

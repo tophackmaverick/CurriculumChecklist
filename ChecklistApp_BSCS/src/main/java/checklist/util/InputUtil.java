@@ -8,8 +8,6 @@ public class InputUtil {
 
     private InputUtil() {}
 
-    // -------------------------------------------------------------------------
-
     public static int readIntInRange(String prompt, int min, int max) {
         while (true) {
             System.out.print(prompt);
@@ -30,8 +28,6 @@ public class InputUtil {
         }
     }
 
-    // -------------------------------------------------------------------------
-
     public static String readNonBlank(String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -44,8 +40,6 @@ public class InputUtil {
             System.out.println("  Input cannot be blank.");
         }
     }
-
-    // -------------------------------------------------------------------------
 
     public static String readGrade(String courseNo) {
         while (true) {
@@ -67,14 +61,10 @@ public class InputUtil {
         }
     }
 
-    // -------------------------------------------------------------------------
-
     public static String readLine(String prompt) {
         System.out.print(prompt);
         return SCANNER.nextLine().trim();
     }
-
-    // -------------------------------------------------------------------------
 
     public static void pressEnterToContinue() {
         System.out.print("\n  Press ENTER to continue...");

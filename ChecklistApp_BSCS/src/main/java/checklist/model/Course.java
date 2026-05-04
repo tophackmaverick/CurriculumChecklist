@@ -15,8 +15,6 @@ public class Course {
     private String actualCourseNo;
     private String actualTitle;
 
-    // -------------------------------------------------------------------------
-
     public Course(String courseNo, String descriptiveTitle, double units,
                   String prereq, int year, String term) {
 
@@ -34,10 +32,6 @@ public class Course {
         this.actualTitle = "";
     }
 
-    // -------------------------------------------------------------------------
-    // Getters
-    // -------------------------------------------------------------------------
-
     public String getCourseNo() { return courseNo; }
     public String getDescriptiveTitle() { return descriptiveTitle; }
     public double getUnits() { return units; }
@@ -50,10 +44,6 @@ public class Course {
     public String getActualCourseNo() { return actualCourseNo; }
     public String getActualTitle() { return actualTitle; }
 
-    // -------------------------------------------------------------------------
-    // Setters (IMPORTANT — includes missing ones)
-    // -------------------------------------------------------------------------
-
     public void setDescriptiveTitle(String title) { this.descriptiveTitle = title; }
     public void setUnits(double units) { this.units = units; }
 
@@ -62,10 +52,6 @@ public class Course {
     public void setCreditedFrom(String from) { this.creditedFrom = from; }
     public void setActualCourseNo(String no) { this.actualCourseNo = no; }
     public void setActualTitle(String title) { this.actualTitle = title; }
-
-    // -------------------------------------------------------------------------
-    // Logic
-    // -------------------------------------------------------------------------
 
     public boolean isTaken() {
         return grade != null && !grade.isEmpty();
@@ -93,8 +79,6 @@ public class Course {
     public String getDisplayTitle() {
         return actualTitle.isEmpty() ? descriptiveTitle : actualTitle;
     }
-
-    // -------------------------------------------------------------------------
 
     @Override
     public String toString() {

@@ -10,8 +10,6 @@ public class PrintUtil {
 
     private PrintUtil() {}
 
-    // -------------------------------------------------------------------------
-
     public static void appHeader(String title) {
         System.out.println();
         System.out.println(THICK_LINE);
@@ -26,8 +24,6 @@ public class PrintUtil {
         System.out.println(THIN_LINE);
     }
 
-    // -------------------------------------------------------------------------
-
     public static void printColumnHeaderNoGrade() {
         System.out.printf("  %-14s  %-48s  %s%n",
                 "Course No.", "Descriptive Title", "Units");
@@ -39,8 +35,6 @@ public class PrintUtil {
                 "Course No.", "Descriptive Title", "Units", "Grade");
         System.out.println("  " + "-".repeat(76));
     }
-
-    // -------------------------------------------------------------------------
 
     public static String yearLabel(int year) {
         return switch (year) {

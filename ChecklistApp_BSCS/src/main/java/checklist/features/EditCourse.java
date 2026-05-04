@@ -45,8 +45,6 @@ public class EditCourse {
         InputUtil.pressEnterToContinue();
     }
 
-    // -------------------------------------------------------------------------
-
     private void editGrade(Course c) {
         String raw = InputUtil.readNonBlank("  Grade (0-100 or clear): ");
 
