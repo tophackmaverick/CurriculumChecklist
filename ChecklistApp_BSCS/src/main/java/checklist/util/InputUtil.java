@@ -78,10 +78,6 @@ public class InputUtil {
 
     public static void pressEnterToContinue() {
         System.out.print("\n  Press ENTER to continue...");
-
-        while (true) {
-            String input = SCANNER.nextLine();
-            if (input.isEmpty()) return;
-        }
+        SCANNER.nextLine(); // ONLY ONE nextLine — this is the correct fix
     }
 }
