@@ -23,7 +23,12 @@ public class ShowSubjectsByTerm {
                 .filter(c -> !c.getTerm().equalsIgnoreCase("Extra"))
                 .toList();
 
-        for (Map.Entry<String, List<Course>> entry : TermGrouper.group(curriculumCourses).entrySet()) {
+        List<Map.Entry<String, List<Course>>> terms =
+                TermGrouper.group(curriculumCourses).entrySet().stream().toList();
+
+        for (int i = 0; i < terms.size(); i++) {
+            Map.Entry<String, List<Course>> entry = terms.get(i);
+
             String[] parts = entry.getKey().split("\\|");
             int year = Integer.parseInt(parts[0]);
             String term = parts[1];
@@ -39,7 +44,10 @@ public class ShowSubjectsByTerm {
             }
 
             System.out.printf("%n  %-64s  %.1f%n", "TOTAL UNITS:", totalUnits);
-            InputUtil.pressEnterToContinue();
+
+            if (i < terms.size() - 1) {
+                InputUtil.pressEnterToContinue();
+            }
         }
     }
 
