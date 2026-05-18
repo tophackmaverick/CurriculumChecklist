@@ -27,8 +27,8 @@ public class ChecklistApp {
     private static String resolveDataDir() {
         String[] paths = {
                 "data",
-                "ChecklistApp_BSCS/data",
-                "ChecklistApp/data"
+                "9316BolinetDecenaFaustinoSantiagoFinalProject1/data",
+                "9316BolinetDecenaFaustinoSantiagoFinalProject1/data"
         };
 
         for (String path : paths) {
